@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  {{ content }}
+
+  {% if site.posts.size > 0 %}
+
+  <h2>Blog Posts:</h2>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% endif %}
+
+</div>
